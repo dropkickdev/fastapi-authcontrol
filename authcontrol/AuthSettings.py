@@ -26,10 +26,10 @@ class AuthSettings(BaseSettings):
     USER_TBL: db.TortoiseBaseUserModel = UserTbl
     
     # Pydantic models
-    USER_MODEL: models.BaseUser = User
-    USERCREATE_MODEL: models.BaseUserCreate = UserCreate
-    USERUPDATE_MODEL: models.BaseUserUpdate = UserUpdate
-    USERDB_MODEL: models.BaseUserDB = UserDB
+    USER_MODEL: str = 'User'
+    USERCREATE_MODEL: str = 'UserCreate'
+    USERUPDATE_MODEL: str = 'UserUpdate'
+    USERDB_MODEL: str = 'UserDB'
     
     
     class Config:
