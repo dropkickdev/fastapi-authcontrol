@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8344aaa33f68ccbd964de1bbc9a8cbc8110efcad5b44cf978a4738ad72561385"
+            "sha256": "f1a259767042d820c3b2eb4ab7e876cead48fd05d3e0a7bbdb045897dee782c2"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -129,6 +129,10 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==0.63.0"
+        },
+        "fastapi-authcontrol": {
+            "path": ".",
+            "version": "==0.1.0"
         },
         "fastapi-users": {
             "git": "file:///home/enchance/stash/Development/repos/fastapi-users/.git",
