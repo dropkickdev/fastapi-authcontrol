@@ -1,0 +1,12 @@
+site_name: AuthControl
+theme:
+  name: material
+  palette:
+    primary: purple
+    accent: purple
+  icon:
+    repo: fontawesome/brands/github-alt
+
+repo_name: dropkickdev/fastapi-authcontrol
+repo_url: https://github.com/dropkickdev/fastapi-authcontrol.git
+edit_uri: ''
