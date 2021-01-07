@@ -10,6 +10,8 @@ twine = "*"
 
 [packages]
 fastapi-users = {git = "file:///home/enchance/stash/Development/repos/fastapi-users/.git", ref = "stable"}
+tortoise-orm = {extras = ["asyncpg"], version = "*"}
+limeutils = "*"
 
 [requires]
 python_version = "3.8"
