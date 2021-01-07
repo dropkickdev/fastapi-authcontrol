@@ -1,4 +1,5 @@
 from .Authcontrol import *
+from .AuthSettings import *
 from .models import *
 
 
