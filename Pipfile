@@ -9,7 +9,7 @@ markdown-include = "*"
 twine = "*"
 
 [packages]
-fastapi-users = {git = "file:///home/enchance/stash/Development/repos/fastapi-users/.git", ref = "develop"}
+fastapi-users = {git = "file:///home/enchance/stash/Development/repos/fastapi-users/.git", ref = "stable"}
 
 [requires]
 python_version = "3.8"
