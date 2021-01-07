@@ -5,19 +5,23 @@ Authentication running on FastAPI-Users
 Installation
 ------------
 
+Installation is a 2-step process. First you install the package then install the fork it depends on.
+
 ### Install with `pip`
 
 ```bash
-pip install fastapi-authcontrol
+pipenv install fastapi-authcontrol
 ```
 
-### Add the fork as a dependency
-This package uses a fork of the [fastapi-users]() package not main one. You'll have to install
- this as a separate `pip` command since I haven't found a way as of yet to include it in the
-  *install_requires* section of this package.
-  
- 
+### Install the fork of FastAPI-Users
 
+```bash
+pipenv install -e git+git://github.com/dropkickdev/fastapi-users.git@master#egg=fastapi-users
+```
+
+!!! note
+    Until there is a way to include a fork in the *install_requires* section of its dependencies,
+     the fork will have to be installed manually.
 
 Features
 --------
