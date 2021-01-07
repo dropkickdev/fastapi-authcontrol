@@ -5,16 +5,19 @@ Authentication running on FastAPI-Users
 Installation
 ------------
 
-Using `pip`
+### Install with `pip`
+
 ```bash
 pip install fastapi-authcontrol
 ```
 
-Using `pipenv`
+### Add the fork as a dependency
+This package uses a fork of the [fastapi-users]() package not main one. You'll have to install
+ this as a separate `pip` command since I haven't found a way as of yet to include it in the
+  *install_requires* section of this package.
+  
+ 
 
-```bash
-pipenv install fastapi-authcontrol
-```
 
 Features
 --------

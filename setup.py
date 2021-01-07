@@ -6,14 +6,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
     name="fastapi-authcontrol", # Replace with your own username
     version="0.1.0",
-    author="DropkickDev",
+    author="Dropkickdev",
     author_email="enchance@gmail.com",
-    description="A drop-in JWT authentication package which uses FastAPI-Users.",
+    description="A drop-in JWT authentication wrapper for FastAPI-Users.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/dropkickdev/fastapi-authcontrol.git",
     packages=setuptools.find_packages(),
-    install_requires=[],
+    install_requires=['limeutils'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
