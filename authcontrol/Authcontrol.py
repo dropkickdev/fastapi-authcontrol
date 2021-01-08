@@ -12,16 +12,15 @@ class Authcontrol:
     
     def __init__(self, settings: AuthSettings):
         self.s = settings
-        UserTbl: TortoiseBaseUserModel = classgrabber(settings.USER_TABLE)
+        UserTable: TortoiseBaseUserModel = classgrabber(settings.USER_TABLE)
         User: models.BaseUser = classgrabber(settings.USER_MODEL)
         UserCreate: models.BaseUserCreate = classgrabber(settings.USERCREATE_MODEL)
         UserUpdate: models.BaseUserUpdate = classgrabber(settings.USERUPDATE_MODEL)
         UserDB: models.BaseUserDB = classgrabber(settings.USERDB_MODEL)
         
-        self.jwt = JWTAuthentication(secret=settings.SECRET_KEY,
-                                     lifetime_seconds=settings.ACCESS_TOKEN_EXPIRE)
-        
-        self.user_db = TortoiseUserDatabase(UserDB, UserTbl)    # noqa
-        self.fapi_user = FastAPIUsers(self.user_db, [self.jwt], User, UserCreate,   # noqa
+        self.jwtauth = JWTAuthentication(secret=settings.SECRET_KEY,
+                                         lifetime_seconds=settings.ACCESS_TOKEN_EXPIRE)
+        self.user_db = TortoiseUserDatabase(UserDB, UserTable)    # noqa
+        self.fapi_user = FastAPIUsers(self.user_db, [self.jwtauth], User, UserCreate,  # noqa
                                       UserUpdate, UserDB)   # noqa
     

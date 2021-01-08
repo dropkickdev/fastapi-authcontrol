@@ -1,7 +1,4 @@
-from typing import List
 from pydantic import BaseSettings, Field
-from fastapi_users import models, db
-from .models import User, UserCreate, UserUpdate, UserDB, UserTbl
 
 
 class AuthSettings(BaseSettings):
@@ -23,7 +20,7 @@ class AuthSettings(BaseSettings):
     SESSION_COOKIE_AGE: int = 1209600                   # seconds
     
     # DB tables
-    USER_TABLE: str = 'authcontrol.models.UserTbl'
+    USER_TABLE: str = 'authcontrol.models.UserTable'
     
     # Pydantic models
     USER_MODEL: str = 'authcontrol.models.User'

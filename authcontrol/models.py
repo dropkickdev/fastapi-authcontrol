@@ -18,7 +18,7 @@ class DTMixin(object):
     created_at = fields.DatetimeField(auto_now_add=True)
     
 
-class UserTbl(DTMixin, TortoiseBaseUserModel):
+class UserTable(DTMixin, TortoiseBaseUserModel):
     username    = fields.CharField(max_length=50, null=True)
     first_name  = fields.CharField(max_length=191, default='')
     middle_name = fields.CharField(max_length=191, default='')
