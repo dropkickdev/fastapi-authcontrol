@@ -1,20 +1,9 @@
-import secrets, pytz, importlib
-from datetime import datetime, timedelta
-from typing import List
-from pydantic import BaseSettings, validator
-from fastapi_users import FastAPIUsers
-from fastapi_users.db import TortoiseUserDatabase
-from fastapi import Request
+from fastapi_users import FastAPIUsers, models
+from fastapi_users.db import TortoiseUserDatabase, TortoiseBaseUserModel
 from fastapi_users.authentication import JWTAuthentication
+from limeutils import classgrabber
 
 from . import AuthSettings
-from .models import *
-
-
-# User = importlib.import_module()
-# UserCreate = importlib.import_module()
-# UserUpdate = importlib.import_module()
-# UserDB = importlib.import_module()
 
 
 class Authcontrol:
@@ -23,10 +12,16 @@ class Authcontrol:
     
     def __init__(self, settings: AuthSettings):
         self.s = settings
-        self.jwt = JWTAuthentication(secret=self.s.SECRET_KEY,
-                                     lifetime_seconds=self.s.ACCESS_TOKEN_EXPIRE)
+        UserTbl: TortoiseBaseUserModel = classgrabber(settings.USER_TABLE)
+        User: models.BaseUser = classgrabber(settings.USER_MODEL)
+        UserCreate: models.BaseUserCreate = classgrabber(settings.USERCREATE_MODEL)
+        UserUpdate: models.BaseUserUpdate = classgrabber(settings.USERUPDATE_MODEL)
+        UserDB: models.BaseUserDB = classgrabber(settings.USERDB_MODEL)
         
-        self.user_db = TortoiseUserDatabase(UserDB, UserTbl)
-
-        self.fapi_user = FastAPIUsers(self.user_db, [self.jwt], User, UserCreate,
-                                      UserUpdate, UserDB)
+        self.jwt = JWTAuthentication(secret=settings.SECRET_KEY,
+                                     lifetime_seconds=settings.ACCESS_TOKEN_EXPIRE)
+        
+        self.user_db = TortoiseUserDatabase(UserDB, UserTbl)    # noqa
+        self.fapi_user = FastAPIUsers(self.user_db, [self.jwt], User, UserCreate,   # noqa
+                                      UserUpdate, UserDB)   # noqa
+    

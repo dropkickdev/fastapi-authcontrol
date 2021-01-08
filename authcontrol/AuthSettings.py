@@ -23,13 +23,13 @@ class AuthSettings(BaseSettings):
     SESSION_COOKIE_AGE: int = 1209600                   # seconds
     
     # DB tables
-    USER_TBL: db.TortoiseBaseUserModel = UserTbl
+    USER_TABLE: str = 'authcontrol.models.UserTbl'
     
     # Pydantic models
-    USER_MODEL: str = 'User'
-    USERCREATE_MODEL: str = 'UserCreate'
-    USERUPDATE_MODEL: str = 'UserUpdate'
-    USERDB_MODEL: str = 'UserDB'
+    USER_MODEL: str = 'authcontrol.models.User'
+    USERCREATE_MODEL: str = 'authcontrol.models.UserCreate'
+    USERUPDATE_MODEL: str = 'authcontrol.models.UserUpdate'
+    USERDB_MODEL: str = 'authcontrol.models.UserDB'
     
     
     class Config:
