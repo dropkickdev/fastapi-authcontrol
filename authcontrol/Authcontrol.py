@@ -75,6 +75,7 @@ class Authcontrol:
         diff = cls._time_difference(expires)
         return diff[units]
     
+    # TODO: Converted this to an object method instead of a class method so updates are needed
     async def create_refresh_token(self, user) -> dict:
         """
         Create and save a new refresh token
@@ -92,7 +93,8 @@ class Authcontrol:
             'value': refresh_token,
             'expires': expires,
         }
-    
+
+    # TODO: Converted this to an object method instead of a class method so updates are needed
     async def update_refresh_token(self, user) -> dict:
         """
         Update the refresh token of the user

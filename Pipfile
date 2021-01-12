@@ -13,6 +13,7 @@ fastapi-users = {git = "file:///home/enchance/stash/Development/repos/fastapi-us
 tortoise-orm = {extras = ["asyncpg"], version = "*"}
 limeutils = "*"
 fastapi-authcontrol = {path = "."}
+pytest = "*"
 
 [requires]
 python_version = "3.8"
